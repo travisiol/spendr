@@ -306,7 +306,8 @@ async function boot(){
   $('#balance').innerHTML = AMOUNTS.map(a=>`<option value="${a}">${money(a)} card balance</option>`).join('');
   $('#balance').onchange = updateQuote;
   renderCoinMenu();
-  if (COINS[0]) selectCoin(COINS[0]);
+  const first = COINS.find(c => c.price > 0) || COINS[0];   // default to an asset that has a live price
+  if (first) selectCoin(first);
   document.addEventListener('click', e=>{ if(!$('#coinPick').contains(e.target)) $('#coinMenu').hidden = true; });
   await loadCards();
 }

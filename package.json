@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "description": "Spend your Robinhood-chain assets: tokenized stocks or memecoins in, a Visa/Mastercard out.",
-  "engines": { "node": ">=20" },
+  "engines": { "node": "24.x" },
   "scripts": {
-    "dev": "node server.mjs",
-    "start": "node server.mjs",
+    "dev": "node dev-server.mjs",
+    "start": "node dev-server.mjs",
     "build": "node build.mjs"
   }
 }

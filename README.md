@@ -17,7 +17,27 @@ npm run dev          # http://localhost:3040  (PORT or --port N to change)
 npm run build        # dist/ static export of src/ with the brand filled in
 ```
 
-`server.mjs` serves `src/` and implements `/api/*`. Node ≥ 20, nothing to install.
+`dev-server.mjs` serves `src/` and implements `/api/*` through `lib/api.mjs`.
+Node ≥ 22, nothing to install.
+
+## Deploy on Vercel
+
+Push to GitHub and import the repo, nothing to configure: `vercel.json`
+pins the build (`npm run build` → `dist/`, served static from the CDN) and
+`api/[...path].mjs` is the single Vercel Function behind every `/api/*` call.
+It reuses `lib/api.mjs`, so local and deployed behaviour are the same code.
+
+Set the environment variables (`CONTRACT_ADDRESS`, `TREASURY_ADDRESS`,
+`ISSUER_*`) in the Vercel project settings; the brand ones are read at build
+time, so redeploy after changing them.
+
+Do not add a `server.*` file at the root: Vercel would capture it as a
+function and route the whole site through it (that is what produced the
+`FUNCTION_INVOCATION_FAILED` crash the first time).
+
+One limit of serverless: replay protection for deposit transactions lives in
+memory per instance (`data/used-tx.json` is only written locally). Back it
+with a database before enabling payments.
 
 ## Brand lives in one file
 

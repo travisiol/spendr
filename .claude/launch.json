@@ -4,7 +4,7 @@
     {
       "name": "spendr",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["server.mjs", "--port", "3040"],
+      "runtimeArgs": ["dev-server.mjs", "--port", "3040"],
       "port": 3040
     }
   ]
