@@ -1,0 +1,23 @@
+{
+  "name": "Spendr Finance",
+  "short": "Spendr",
+  "slug": "spendr",
+  "domain": "spendr.finance",
+  "tagline": "Spend your on-chain assets",
+  "xHandle": "@SpendrFinance",
+  "xUrl": "https://x.com/SpendrFinance",
+  "ca": "",
+  "chain": {
+    "id": 4663,
+    "name": "Robinhood Chain",
+    "rpc": "https://rpc.mainnet.chain.robinhood.com",
+    "explorer": "https://explorer.robinhood.com",
+    "dexscreenerSlug": "robinhood"
+  },
+  "fee": 15,
+  "amounts": [10, 20, 50, 100, 250, 500, 1000],
+  "bins": [
+    { "id": "bin_sg_mc", "name": "Singapore · Mastercard" },
+    { "id": "bin_hk_mc", "name": "Hong Kong · Mastercard" }
+  ]
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="gBody" cx="0.38" cy="0.28" r="0.85">
+      <stop offset="0" stop-color="#f6f0ff"/>
+      <stop offset="0.42" stop-color="#cdbbff"/>
+      <stop offset="0.78" stop-color="#9d7bff"/>
+      <stop offset="1" stop-color="#7a52f0"/>
+    </radialGradient>
+    <linearGradient id="gRim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#e2d6ff" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="fGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="9"/>
+      <feOffset dy="6" result="b"/>
+      <feFlood flood-color="#6a3df5" flood-opacity="0.55"/>
+      <feComposite in2="b" operator="in" result="s"/>
+      <feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <g filter="url(#fGlow)">
+    <path d="M128 30C80 30 54 70 54 120v46c0 14-14 18-14 32 0 17 22 25 36 14 10-8 22-8 32 3 11 11 33 11 44 0 10-11 22-11 32-3 14 11 36 3 36-14 0-14-14-18-14-32v-46c0-50-26-90-74-90z" fill="url(#gBody)" stroke="url(#gRim)" stroke-width="7" stroke-linejoin="round"/>
+  </g>
+  <ellipse cx="108" cy="66" rx="42" ry="20" fill="#ffffff" opacity="0.45" filter="url(#fSoft)"/>
+  <ellipse cx="104" cy="118" rx="13" ry="20" fill="#2b1a4f"/>
+  <ellipse cx="152" cy="118" rx="13" ry="20" fill="#2b1a4f"/>
+  <ellipse cx="100" cy="110" rx="3.5" ry="5" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="148" cy="110" rx="3.5" ry="5" fill="#ffffff" opacity="0.7"/>
+</svg>

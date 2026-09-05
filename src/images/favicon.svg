@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c1147"/>
+      <stop offset="1" stop-color="#05021a"/>
+    </linearGradient>
+    <radialGradient id="gBody" cx="0.38" cy="0.28" r="0.85">
+      <stop offset="0" stop-color="#f6f0ff"/>
+      <stop offset="0.42" stop-color="#cdbbff"/>
+      <stop offset="0.78" stop-color="#9d7bff"/>
+      <stop offset="1" stop-color="#7a52f0"/>
+    </radialGradient>
+    <filter id="fGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dy="5" result="b"/>
+      <feFlood flood-color="#6a3df5" flood-opacity="0.6"/>
+      <feComposite in2="b" operator="in" result="s"/>
+      <feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <g transform="translate(128 132) scale(0.72) translate(-128 -128)">
+    <g filter="url(#fGlow)">
+      <path d="M128 30C80 30 54 70 54 120v46c0 14-14 18-14 32 0 17 22 25 36 14 10-8 22-8 32 3 11 11 33 11 44 0 10-11 22-11 32-3 14 11 36 3 36-14 0-14-14-18-14-32v-46c0-50-26-90-74-90z" fill="url(#gBody)" stroke="#ffffff" stroke-opacity="0.92" stroke-width="7" stroke-linejoin="round"/>
+    </g>
+    <ellipse cx="108" cy="66" rx="42" ry="20" fill="#ffffff" opacity="0.45" filter="url(#fSoft)"/>
+    <ellipse cx="104" cy="118" rx="13" ry="20" fill="#2b1a4f"/>
+    <ellipse cx="152" cy="118" rx="13" ry="20" fill="#2b1a4f"/>
+  </g>
+</svg>
